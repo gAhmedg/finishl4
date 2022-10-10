@@ -62,12 +62,10 @@ pipeline {
         stage('Push image') {
             steps {
 
-                withCredentials([string(credentialsId: 'DockerHub', variable: 'Docker')]) {
-    
-}
+            
                sh(script: """
-                   
-                docker login -u algn48 -p ${DockerHub}
+                echo '$DockerHub | docker login -u $DockerHub --password-stdin'
+            
                 docker push docker-image
 
                     """)    

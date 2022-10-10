@@ -75,7 +75,7 @@ environment {
                sh(script: """
                 
             
-                docker push docker.io/library/docker-image
+                docker push docker.io/algn48/docker-image
 
                     """)    
             }

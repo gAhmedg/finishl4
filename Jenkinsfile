@@ -28,18 +28,7 @@ pipeline {
             }
          }
          
- // stage3
 
-        stage('Build Maven') {
-            steps {
-                
-               sh(script: """
-                   
-               mvn clean install
-
-            """) 
-            }
-         }
 
 
 

@@ -55,7 +55,7 @@ environment {
             
                sh(script: """
                 
-            docker push dc/docker-image:1st
+            docker push gsd/dc/docker-image:1st
 
                 
 

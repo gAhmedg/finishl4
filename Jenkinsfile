@@ -43,7 +43,7 @@ pipeline {
                 
                sh(script: """
                    
-               docker build -t Docker_image/spring-petclinic-2.3.1.BUILD-SNAPSHOT.
+               docker build -t Docker-image .
 
             """) 
 

@@ -56,7 +56,7 @@ environment {
                sh(script: """
                 
             
-                docker push docker.io/library/docker-image .
+                docker push . docker-image 
 
                     """)    
             }

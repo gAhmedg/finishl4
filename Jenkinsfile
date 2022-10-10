@@ -56,10 +56,32 @@ pipeline {
                 echo "docker failed   :("
                      }
                 }
-         
-
           }
+// stage4
+    stages {
+        stage('Push image') {
+            steps {
+         withCredentials([string(credentialsId: 'DockerHub', variable: 'DockerHub')]) {
+            
+                    }
+               sh(script: """
+                   
+                docker login -u algn48 -p ${DockerHub}
+                docker push docker-image
 
+                    """)    
+            }
+        }
+
+           post {
+             success {
+                echo " Push successfully :)"
+                   }
+             failure {
+                echo "Push failed   :("
+                     }
+                }
+             }
 
         
     }

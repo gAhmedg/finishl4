@@ -58,7 +58,7 @@ pipeline {
                 }
           }
 // stage4
-    stages {
+    
         stage('Push image') {
             steps {
          withCredentials([string(credentialsId: 'DockerHub', variable: 'DockerHub')]) {
@@ -71,7 +71,7 @@ pipeline {
 
                     """)    
             }
-        }
+        
 
            post {
              success {

@@ -5,7 +5,9 @@ pipeline {
         
         maven "maven-3.8.6" 
     }
-
+environment {
+    DOCKERHUB_CREDENTIALS=credentials('DockerHub')
+}
   // stage1
     stages {
         stage('Verify Branch') {
@@ -64,7 +66,7 @@ pipeline {
 
             
                sh(script: """
-                echo '$DockerHub | docker login -u $DockerHub --password-stdin'
+                echo '$DOCKERHUB_CREDENTIALS_PSw | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
             
                 docker push docker-image
 

@@ -19,26 +19,7 @@ environment {
 
 // stage2
 
-        stage('Build Maven') {
-            steps {
-                
-               sh(script: """
-                   
-               mvn clean install
-
-            """) 
-            }
-            post {
-                
-                success {
-                    junit '**/target/surefire-reports/TEST-*.xml'
-                }
-                  failure {
-                 echo "failllllllllllll"
-                  }
-            }
-         }
-
+  
  // stage3
           stage('Build Docker') {
             steps {
@@ -75,7 +56,7 @@ environment {
                sh(script: """
                 
             
-                docker push docker.io/algn48/docker-image
+                docker push docker.io/library/docker-image .
 
                     """)    
             }

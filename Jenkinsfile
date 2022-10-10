@@ -36,6 +36,26 @@ pipeline {
                   }
             }
          }
+
+ // stage3
+          stage('Build Docker') {
+            steps {
+                
+               sh(script: """
+                   
+               docker build -t Docker_image/spring-petclinic-2.3.1.BUILD-SNAPSHOT.
+
+            """) 
+
+            }
+            post {
+             success {
+                echo " docker successfully :)"
+                   }
+             failure {
+                echo "docker failed   :("
+                     }
+                }
          
 
 

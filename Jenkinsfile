@@ -22,7 +22,7 @@ pipeline {
                 
                sh(script: """
                    
-               mvn clean package
+               mvn clean install
 
             """) 
             }

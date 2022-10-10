@@ -43,7 +43,7 @@ pipeline {
                 
                sh(script: """
                    
-               docker build -t Docker-image .
+               docker build -t docker-image .
 
             """) 
 

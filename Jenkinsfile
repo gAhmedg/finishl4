@@ -75,7 +75,7 @@ environment {
                sh(script: """
                 
             
-                docker push algn48/docker-image/latest
+                docker push /docker-image/latest
 
                     """)    
             }

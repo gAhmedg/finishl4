@@ -9,7 +9,7 @@ environment {
     DOCKERHUB_CREDENTIALS=credentials('DockerHub')
 }
   // stage1
-    stages {
+    stages {    
         stage('Verify Branch') {
             steps {
                 echo "$GIT_BRANCH"
@@ -43,7 +43,7 @@ environment {
                 
                sh(script: """
                    
-               docker build -t docker-image .
+               docker build -t algn48/docker-image .
 
             """) 
 
@@ -72,7 +72,7 @@ environment {
             
                sh(script: """
                 
-            docker push docker-image
+            docker push algn48/docker-image
 
                 
 
